@@ -2,9 +2,9 @@
 
 * Teammitglieder:
 	1. Mert Karadeniz
-	2. <Name2>
+	2. Emirhan Naroglu
 	3. William Eppel
-* Team: <Teamnummer>
+* Team: 08
 * Semester: 
 Ein einfaches Tool zum zeichnen von Liniensegmente auf Bildern, wo zum Beispiel Schienen abgebildet sind.
 
