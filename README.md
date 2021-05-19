@@ -1,7 +1,7 @@
 # Programmierprojekt: Annotationstool Für Liniensegmente
 
 * Teammitglieder:
-	1. Mert Karadeniz
+	1. Mert Karadeniz s0569367
 	2. Emirhan Naroglu
 	3. William Eppel s0570986
 * Team: 08
