@@ -1,14 +1,13 @@
-# Programmierprojekt: <Themenname>
+# Programmierprojekt: Annotationstool Für Liniensegmente
 
 * Teammitglieder:
-	1. <Name1>
+	1. Mert Karadeniz
 	2. <Name2>
-	3. <Name3>
-	4. <Name4>
+	3. William Eppel
 * Team: <Teamnummer>
 * Semester: 
+Ein einfaches Tool zum zeichnen von Liniensegmente auf Bildern, wo zum Beispiel Schienen abgebildet sind.
 
-Hier eine Kurzbeschreibung Ihres Projektes in 2-3 Sätzen
 
 ## Installationshinweise
 
@@ -16,7 +15,7 @@ Hier Anweisungen hinterlegen die fuer eine Installation notwendig sind. Diese mu
 
 ## Verwendung der Software
 
-Wie verwendet man diese Software? Welches Programm muss man starten?
+Man kann das Programm starten mithilfe der sln vom Main branch
 
 ## Links, Hinweise etc.
 
