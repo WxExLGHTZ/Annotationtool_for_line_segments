@@ -2,7 +2,7 @@
 
 * Teammitglieder:
 	1. Mert Karadeniz s0569367
-	2. Emirhan Naroglu
+	2. Emirhan Naroglu s0573643
 	3. William Eppel s0570986
 * Team: 08
 * Semester: SS21
