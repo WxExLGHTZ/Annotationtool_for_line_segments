@@ -12,10 +12,30 @@ using System.Windows.Forms;
 
 namespace Annotation
 {
+    /// <summary>
+    /// Singelton Klasse für das Anzeigen von Statusmeldungen in der Anwendung 
+    /// </summary>
     class StatusManager
     {
+
+
         private static StatusManager _statusManager = null;
 
+
+
+        /// <summary>
+        /// privater Konstruktor für das Singelton-Muster
+        /// </summary>
+        private StatusManager()
+        {
+
+        }
+
+
+
+        /// <summary>
+        /// Nutzung der einzigen vorhandenen Instanz 
+        /// </summary>
         public static StatusManager Instance
         {
             get
@@ -31,13 +51,21 @@ namespace Annotation
         }
 
 
+
+
+        /// <summary>
+        /// das Event wird "ausgeführt" wenn die Statusmeldung sich ändert
+        /// </summary>
+
         public event EventHandler<StatusMessageEventArgs> StatusMessageChanged;
 
-        private StatusManager()
-        {
 
-        }
 
+
+        /// <summary>
+        /// setzt eine neue Statusmeldung 
+        /// </summary>
+        /// <param name="statusMessage">Die Statusmeldung </param>
         public void SetStatus(string statusMessage)
         {
             if (StatusMessageChanged != null)
@@ -47,6 +75,7 @@ namespace Annotation
 
         }
     }
+
 
 }
 

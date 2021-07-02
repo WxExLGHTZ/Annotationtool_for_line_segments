@@ -13,7 +13,7 @@ using MathNet.Numerics.Interpolation;
 namespace Annotation
 {
 
-   public class Curve
+    public class Curve
     {
         [JsonIgnore]
         public const string StartMessage = "Please select the start point of the Curve.";
@@ -23,13 +23,24 @@ namespace Annotation
         public const string EndMessage = "Please select the next point of the Curve with the left mouse button or click right to end.";
 
         /// <summary>
-        /// Die Farbe den zu benutzenden Stiftes
-        /// </summary>
-        public Color penColor { get; set; }
-        /// <summary>
         /// Der Stift mit der Standard Farbe BlueViolet mit einer Dicke von 10f
         /// </summary>
         [JsonIgnore] public Pen DrawPen { get; set; } = new Pen(Color.BlueViolet, 10f);
+
+
+        /// <summary>
+        /// Die Farbe den zu benutzenden Stiftes
+        /// </summary>
+        public Color penColor { get; set; }
+
+
+
+        /// <summary>
+        /// Das Dild auf welchem die Kurve gezeichnet wird
+        /// </summary>
+        public string ImagePath { get; set; }
+
+
 
 
 
@@ -93,8 +104,11 @@ namespace Annotation
 
         private readonly List<Point> _points = new List<Point>();
 
-
+        /// <summary>
+        /// Die punkte der Kurve als <see cref="IReadOnlyList&lt;Point&gt;"/>
+        /// </summary>
         public IReadOnlyList<Point> Points => _points.AsReadOnly();
+
 
         /// <summary>
         /// Konstruktor für eine neue Instanz einer Curve
@@ -104,6 +118,9 @@ namespace Annotation
         {
             _points.AddRange(points);
         }
+
+
+
         /// <summary>
         /// holt alle x Koordinaten aus der Curve die er durchlaufen soll
         /// </summary>
@@ -118,6 +135,9 @@ namespace Annotation
             return x.ToArray(); ;
 
         }
+
+
+
         /// <summary>
         /// holt alle y Koordinaten aus der Curve die er durchlaufen soll
         /// </summary>
@@ -132,6 +152,8 @@ namespace Annotation
             return y.ToArray(); ;
 
         }
+
+
 
         /// <summary>
         /// erstellt eine Funktion durch die x und y Koordinaten und erstellt dann für jede einzelne x Koordinate einen Punkt und fügt diese Punkte dann zur Curve
@@ -179,10 +201,13 @@ namespace Annotation
 
         }
 
-        public bool Railleft { get; set; }
+
+
+
+        public bool Railleft { get; set; } // ---<<<<<<<<<<<<<<<< !!!!!! WEG
         public int Railindex { get; set; }
 
-        public string ImagePath { get; set; }  // William
+
 
 
         /// <summary>
@@ -193,6 +218,9 @@ namespace Annotation
         {
             _points.Add(newPoint);
         }
+
+
+
         /// <summary>
         /// löscht den Punkt an einer bestimmten Stelle in der Curve
         /// </summary>
@@ -201,6 +229,7 @@ namespace Annotation
         {
             _points.RemoveAt(index);
         }
+
 
 
         /// <summary>
@@ -249,6 +278,11 @@ namespace Annotation
             return new Point(screenPoint.X, -(screenPoint.Y - screenHeight));
         }
 
+
+
+        /// <summary>
+        /// Der curve-click-handler der zum erzeugen einer Kurve genutzt wird 
+        /// </summary>
 
         public static ClickResult CurveClickHandler(System.Drawing.Point clickPoint, MouseButtons buttons, int screenHeight,
             ref Curve currentElement, out string statusMessage)
@@ -299,4 +333,5 @@ namespace Annotation
 
 
     }
+
 }
