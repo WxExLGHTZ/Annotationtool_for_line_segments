@@ -465,22 +465,6 @@ namespace Annotation_finish
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (IsSaved == false)
-            {
-
-
-                if (MessageBox.Show("Do you want to save changes to your text?", "My Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    // Cancel the Closing event from closing the form.
-                    e.Cancel = true;
-                    saveToolStripMenuItem1_Click(sender, e);
-                    // Call method to save file...
-                    //test
-                }
-            }
-        }
 
         private void nextToolStripMenuItem1_Click_1(object sender, EventArgs e) //Emirhan
         {
@@ -592,7 +576,22 @@ namespace Annotation_finish
 
         }
 
-       
+        private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            if (IsSaved == false)
+            {
+
+
+                if (MessageBox.Show("Do you want to save changes to your text?", "My Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    // Cancel the Closing event from closing the form.
+                    e.Cancel = true;
+                    saveToolStripMenuItem1_Click(sender, e);
+                    // Call method to save file...
+                    //test
+                }
+            }
+        }
     }
 }
 
