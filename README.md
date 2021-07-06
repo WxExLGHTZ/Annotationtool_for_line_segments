@@ -13,19 +13,19 @@ Ein einfaches Tool zum zeichnen von Liniensegmente auf Bildern, wo zum Beispiel 
 
 ## Installationshinweise
 
-Clone the repo:
-git clone https://gitlab.rz.htw-berlin.de/programmierprojekt/sose2021/grp08.git
+**Clone the repo:**
+_git clone_ https://gitlab.rz.htw-berlin.de/programmierprojekt/sose2021/grp08.git
 
-Open folder:
+**Open folder:**
 grp08
 
-Open foler:
+**Open foler:**
 Version finished
 
-Open folder:
+**Open folder:**
 Annotation_finish
 
-Open file:
+**Open file:**
 Annotation_finish.sln
 
 ## Verwendung der Software
