@@ -19,7 +19,7 @@ _git clone_ https://gitlab.rz.htw-berlin.de/programmierprojekt/sose2021/grp08.gi
 **Open folder:**
 grp08
 
-**Open foler:**
+**Open folder:**
 Version finished
 
 **Open folder:**
