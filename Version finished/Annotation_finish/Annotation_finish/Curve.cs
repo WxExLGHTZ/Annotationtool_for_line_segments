@@ -41,68 +41,8 @@ namespace Annotation
         public string ImagePath { get; set; }
 
 
-
-
-
-
-
-        //test message for git 
-
-
-
-        //        if (_savedDrawing.Curves.Count<zahler)
-        //                    {
-
-        //                        _currentCurve.DrawPen = new Pen(Color.BlueViolet, 10f);
-        //                        if (_savedDrawing.Curves.Count - zahler == 3)
-        //                        {
-        //                            zahler-- ;
-        //                        }
-
-        //}
-        //                    else if (_savedDrawing.Curves.Count <= 2)
-        //{
-        //    _currentCurve.DrawPen = new Pen(Color.BlueViolet, 10f);
-        //}
-
-        //else if (_savedDrawing.Curves.Count == zahler || _savedDrawing.Curves.Count >= zahler)
-        //{
-        //    zahler = zahler + zwischen;
-        //    zwischen++;
-        //    _currentCurve.DrawPen = new Pen(Color.Red, 10f);
-
-
-        //}
-
-
-
-
-        //public void PenSwitcher(Drawing d, int pnm)
-        //{
-
-        //    if (d.Curves.Count > pnm)
-        //    {
-
-
-        //        DrawPen = new Pen( Color.FromArgb(r.Next(0, 256),
-        //            r.Next(0, 256), r.Next(0, 256)), 10f);
-
-
-        //    }
-        //    else 
-        //    {
-        //        DrawPen = new Pen(Color.BlueViolet, 10f);
-
-        //    }
-
-
-
-
-
-        //}
-
-
         private readonly List<Point> _points = new List<Point>();
+
 
         /// <summary>
         /// Die punkte der Kurve als <see cref="IReadOnlyList&lt;Point&gt;"/>
@@ -202,14 +142,6 @@ namespace Annotation
         }
 
 
-
-
-        public bool Railleft { get; set; } // ---<<<<<<<<<<<<<<<< !!!!!! WEG
-        public int Railindex { get; set; }
-
-
-
-
         /// <summary>
         /// fügt den Punkt zur gegeben Curve hinzu
         /// </summary>
@@ -256,11 +188,6 @@ namespace Annotation
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-
-
-
-
 
         }
 

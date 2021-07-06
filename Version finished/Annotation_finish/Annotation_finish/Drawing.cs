@@ -23,10 +23,6 @@ namespace Annotation
         public event EventHandler Redraw;
 
 
-        public int pswitch; //<<<<<<<<<<<<<<<<<<<<<<<<<<<< WEG ?
-        public int Pswitch { get { return pswitch; } set { pswitch = value; } }
-
-
         /// <summary>
         /// erzeugt eine Drawing Instanz
         /// </summary>

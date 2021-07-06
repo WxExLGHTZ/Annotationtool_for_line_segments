@@ -15,7 +15,7 @@ namespace Annotation_finish
     public partial class MainForm : Form
     {
 
-        private Drawing _drawing = new Drawing(new Curve[0]);                                        // Zwischenspeicher
+        private Drawing _drawing = new Drawing(new Curve[0]);         // Zwischenspeicher
         private Drawing _savedDrawing = new Drawing(new Curve[0]);    // gesamtheit (Drawing) aller Curven
         private bool IsSaved = true;
 
@@ -30,16 +30,11 @@ namespace Annotation_finish
         public Color penColor = Color.BlueViolet;
 
 
-
         public Pen Pen = new Pen(Color.BlueViolet, 10f);
 
-
-
-
-
         Graphics pictureBoxGraphics = null;
-        public int zahler = 2;
-        public int zwischen = 2;
+ 
+
 
 
         public MainForm()
@@ -55,8 +50,6 @@ namespace Annotation_finish
             g.ScaleTransform(1f, -1f);
             g.TranslateTransform(0f, -pictureBox1.Height);
         }
-
-
 
         private Graphics GetPictureBoxGraphics()
         {
@@ -76,6 +69,11 @@ namespace Annotation_finish
             pictureBox1.Invalidate();
         }
 
+
+        /// <summary>
+        /// Öffnen einer Datei (.drw, .bmp, .jpg, .png)
+        /// </summary>
+  
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
@@ -87,11 +85,8 @@ namespace Annotation_finish
 
             };
 
-            ofd.Multiselect = true;
-            //bitmapList.Clear();
-            //pathList.Clear();
-            //_savedDrawing.Clear();
-            //_drawing.Clear();
+            ofd.Multiselect = true; 
+
             cur_pic = 0;
 
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -130,7 +125,7 @@ namespace Annotation_finish
                     bitmapList.Add(new Bitmap(p));
                 }
 
-                pictureBox1.Image = (Image)bitmapList[cur_pic]; // ausgabe des ersten Elements
+                pictureBox1.Image = (Image)bitmapList[cur_pic];
                 path = pathList[cur_pic];
 
                 IsSaved = true;
@@ -143,7 +138,7 @@ namespace Annotation_finish
                         _drawing.AddCurve(curve);
                     }
                 }
-                MessageBox.Show("Press curve button to place a curve", "Information",
+                MessageBox.Show("Press *New Curve* or *N* to place a new curve", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -152,7 +147,7 @@ namespace Annotation_finish
 
 
         //Shortcuts input
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) //Emirhan
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Right)
             {
@@ -253,7 +248,7 @@ namespace Annotation_finish
                         bitmapList.Add(new Bitmap(p));
                     }
 
-                    pictureBox1.Image = (Image)bitmapList[cur_pic]; // ausgabe des ersten Elements
+                    pictureBox1.Image = (Image)bitmapList[cur_pic];
                     path = pathList[cur_pic];
 
 
@@ -322,15 +317,10 @@ namespace Annotation_finish
             {
                 penColor = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
 
-                //int letztecurv = _drawing.Curves.Count - 1;
-
-                //Pen = new Pen(Color.FromArgb(r.Next(0, 256),r.Next(0, 256), r.Next(0, 256)), 10f);
-
                 Pen.Color = penColor;
 
                 colorToolStripMenuItem1.BackColor = penColor;
 
-                // _drawing.Draw(GetPictureBoxGraphics());
                 _currentCurve = null;
             }
             if (keyData == Keys.X)
@@ -346,7 +336,7 @@ namespace Annotation_finish
                     _drawing.RemoveCurve(_drawing.Curves.Count - 1);
                     _savedDrawing.RemoveCurve(_savedDrawing.Curves.Count - 1);
                     _drawing.Draw(GetPictureBoxGraphics());
-                    //_savedDrawing = _drawing;
+
                 }
             }
 
@@ -355,10 +345,7 @@ namespace Annotation_finish
 
 
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+    
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -382,41 +369,25 @@ namespace Annotation_finish
                     _currentCurve.penColor = penColor;
 
 
-
-
-
-
                     if (Pen != null)
                     {
                         _currentCurve.DrawPen = new Pen(_currentCurve.penColor, 10f);
                     }
 
-                    _savedDrawing.AddCurve(_currentCurve); // zwischenspeicher für alle Curves
+                    _savedDrawing.AddCurve(_currentCurve); 
 
                     _drawing.AddCurve(_currentCurve);
 
 
-
                     _currentCurve.Draw(GetPictureBoxGraphics());
-                    //_drawing.Draw(GetPictureBoxGraphics());
-
-
+                    
                     IsSaved = false;
 
                     _currentCurve = null;
                 }
             }
         }
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.M)
-            {
-                _currentCurve = null;
-                _clickHandler = Curve.CurveClickHandler;
-                StatusManager.Instance.SetStatus(Curve.StartMessage);
-            }
-        }
+        
 
         private void pictureBox1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -424,20 +395,11 @@ namespace Annotation_finish
             _drawing.Draw(e.Graphics);
 
         }
-
-
-        private void pictureBox1_Resize_1(object sender, EventArgs e)
-        {
-            pictureBox1.Invalidate();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        
+    
 
         //Curve Button
-        private void curveToolStripMenuItem1_Click_1(object sender, EventArgs e) //Emirhan
+        private void curveToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             if (bitmapList.Count != 0)
             {
@@ -455,7 +417,7 @@ namespace Annotation_finish
 
 
         //Stop Button
-        private void stopDrawingToolStripMenuItem1_Click(object sender, EventArgs e) //Emirhan
+        private void stopDrawingToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
             if (_clickHandler == Curve.CurveClickHandler)
@@ -466,7 +428,7 @@ namespace Annotation_finish
         }
 
 
-        private void nextToolStripMenuItem1_Click_1(object sender, EventArgs e) //Emirhan
+        private void nextToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             if (cur_pic < bitmapList.Count - 1)
             {
@@ -490,7 +452,7 @@ namespace Annotation_finish
             }
         }
 
-        private void backToolStripMenuItem1_Click(object sender, EventArgs e) //Emirhan
+        private void backToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
             if (cur_pic > 0)
@@ -525,15 +487,10 @@ namespace Annotation_finish
         {
             penColor = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
 
-            //int letztecurv = _drawing.Curves.Count - 1;
-
-            //Pen = new Pen(Color.FromArgb(r.Next(0, 256),r.Next(0, 256), r.Next(0, 256)), 10f);
-
             Pen.Color = penColor;
 
             colorToolStripMenuItem1.BackColor = penColor;
 
-            // _drawing.Draw(GetPictureBoxGraphics());
             _currentCurve = null;
         }
 
@@ -544,10 +501,14 @@ namespace Annotation_finish
                 _drawing.RemoveCurve(_drawing.Curves.Count - 1);
                 _savedDrawing.RemoveCurve(_savedDrawing.Curves.Count - 1);
                 _drawing.Draw(GetPictureBoxGraphics());
-                //_savedDrawing = _drawing;
             }
         }
 
+
+        /// <summary>
+        /// speichern einer Datei (.drw)
+        /// </summary>
+       
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (_savedDrawing.Curves.Count != 0)
@@ -582,15 +543,23 @@ namespace Annotation_finish
             {
 
 
-                if (MessageBox.Show("Do you want to save changes to your text?", "My Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to save changes bofore closing?", "My Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    // Cancel the Closing event from closing the form.
                     e.Cancel = true;
                     saveToolStripMenuItem1_Click(sender, e);
-                    // Call method to save file...
-                    //test
+                    
                 }
             }
+        }
+
+        private void helpShowToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To start work with this application:\n\npress *File* and open a file you want to work with.\n" +
+                            "press *Edit*.\npress *New Curve* and start\n\nShortcuts you can use:\n\nO : Open\nS : Save\nX : Clear All\n" +
+                            "N : New Curve\nT : Stop Drawing\nB : Delete Curve\nC : New Color\n--> : Next Image:\n<-- : Previous Image", "Information",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+           
         }
     }
 }
