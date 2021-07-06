@@ -31,10 +31,14 @@ Annotation_finish.sln
 ## Verwendung der Software
 
 Mit dem Tool kann man Liniensegmente (Kurven) auf Bildern zeichnen.
+
 Es ist möglich die die Farbe der Kurven zu ändern.
+
 Es ist möglich die letzte oder alle Kurven zu löschen.
-Es können Datein mit den Dateinamenserweiterungen: ".drw ; .bmp ; .jpg ; .png" geladen werden
-Es können Datein mit der Dateinamenserweiterung .drw gespeichert werden
+
+Es können Datein mit den Dateinamenserweiterungen: ".drw ; .bmp ; .jpg ; .png" geladen werden.
+
+Es können Datein mit der Dateinamenserweiterung .drw gespeichert werden.
 
 ## Links, Hinweise etc.
 
