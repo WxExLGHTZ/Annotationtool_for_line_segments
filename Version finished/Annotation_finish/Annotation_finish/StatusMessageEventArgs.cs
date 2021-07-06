@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Annotation
 {
     /// <summary>
-    /// Nutzung der Event-args für das <see cref="StatusManager.StatusMessageChanged"/> Even
+    /// Nutzung der Event-args für das <see cref="StatusManager.StatusMessageChanged"/> Event
     /// </summary>
     class StatusMessageEventArgs : EventArgs
     {
