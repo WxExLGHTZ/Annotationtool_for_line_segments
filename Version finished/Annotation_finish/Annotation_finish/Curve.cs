@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -29,14 +29,14 @@ namespace Annotation
 
 
         /// <summary>
-        /// Die Farbe den zu benutzenden Stiftes
+        /// Die Farbe des zu benutzenden Stiftes
         /// </summary>
         public Color penColor { get; set; }
 
 
 
         /// <summary>
-        /// Das Dild auf welchem die Kurve gezeichnet wird
+        /// Das Bild auf welchem die Kurve gezeichnet wird
         /// </summary>
         public string ImagePath { get; set; }
 
