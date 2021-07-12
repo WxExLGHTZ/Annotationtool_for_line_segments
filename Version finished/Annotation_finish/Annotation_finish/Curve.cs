@@ -50,6 +50,8 @@ namespace Annotation
         public IReadOnlyList<Point> Points => _points.AsReadOnly();
 
 
+
+
         /// <summary>
         /// Konstruktor für eine neue Instanz einer Curve
         /// </summary>
@@ -58,6 +60,12 @@ namespace Annotation
         {
             _points.AddRange(points);
         }
+
+
+
+
+
+
 
 
 

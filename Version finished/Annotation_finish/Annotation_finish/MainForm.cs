@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Point = Annotation.Point;
 
 namespace Annotation_finish
 {
@@ -64,6 +65,31 @@ namespace Annotation_finish
 
 
 
+        public void transformCoord(Drawing d)
+        {
+            foreach (Curve c in d.Curves)
+            {
+                foreach (Point p in c.Points)
+                {
+                    p.X = p.X / pictureBox1.Width;
+                    p.Y = p.Y / pictureBox1.Height;
+                }
+            }
+        }
+
+
+        public void transformCoord1(Drawing d)
+        {
+            foreach (Curve c in d.Curves)
+            {
+                foreach (Point p in c.Points)
+                {
+                    p.X = p.X * pictureBox1.Width;
+                    p.Y = p.Y * pictureBox1.Height;
+                }
+            }
+        }
+
         private void OnRedraw(Object sender, EventArgs e)
         {
             pictureBox1.Invalidate();
@@ -104,6 +130,7 @@ namespace Annotation_finish
                     if (ext == ".drw")
                     {
                         _savedDrawing.Load(f);
+                        transformCoord1(_savedDrawing);
                     }
                     else
                     {
@@ -524,6 +551,8 @@ namespace Annotation_finish
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
+                    transformCoord(_savedDrawing);
+
                     _savedDrawing.Save(sfd.FileName);
                 }
                 IsSaved = true;
