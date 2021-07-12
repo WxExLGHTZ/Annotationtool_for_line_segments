@@ -13,11 +13,32 @@ Ein einfaches Tool zum zeichnen von Liniensegmente auf Bildern, wo zum Beispiel 
 
 ## Installationshinweise
 
-Hier Anweisungen hinterlegen die fuer eine Installation notwendig sind. Diese muessen 100% vollstaendig sein
+**Clone the repo:**
+_git clone_ https://gitlab.rz.htw-berlin.de/programmierprojekt/sose2021/grp08.git
+
+**Open folder:**
+grp08
+
+**Open folder:**
+Version finished
+
+**Open folder:**
+Annotation_finish
+
+**Open file:**
+Annotation_finish.sln
 
 ## Verwendung der Software
 
-Man kann das Programm starten mithilfe der sln vom Main branch
+Mit dem Tool kann man Liniensegmente (Kurven) auf Bildern zeichnen.
+
+Es ist möglich die die Farbe der Kurven zu ändern.
+
+Es ist möglich die letzte oder alle Kurven zu löschen.
+
+Es können Datein mit den Dateinamenserweiterungen: ".drw ; .bmp ; .jpg ; .png" geladen werden.
+
+Es können Datein mit der Dateinamenserweiterung .drw gespeichert werden.
 
 ## Links, Hinweise etc.
 
