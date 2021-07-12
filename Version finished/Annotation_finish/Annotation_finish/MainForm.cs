@@ -65,7 +65,7 @@ namespace Annotation_finish
 
 
 
-        public void transformCoord(Drawing d)
+        public void transformCoordSave(Drawing d)
         {
             foreach (Curve c in d.Curves)
             {
@@ -78,7 +78,7 @@ namespace Annotation_finish
         }
 
 
-        public void transformCoord1(Drawing d)
+        public void transformCoordLoad(Drawing d)
         {
             foreach (Curve c in d.Curves)
             {
@@ -130,7 +130,7 @@ namespace Annotation_finish
                     if (ext == ".drw")
                     {
                         _savedDrawing.Load(f);
-                        transformCoord1(_savedDrawing);
+                        transformCoordLoad(_savedDrawing);
                     }
                     else
                     {
@@ -254,6 +254,7 @@ namespace Annotation_finish
                         if (ext == ".drw")
                         {
                             _savedDrawing.Load(f);
+                            transformCoordLoad(_savedDrawing);
                         }
                         else
                         {
@@ -329,6 +330,8 @@ namespace Annotation_finish
 
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
+                        transformCoordSave(_savedDrawing);
+
                         _savedDrawing.Save(sfd.FileName);
                     }
                     IsSaved = true;
@@ -551,7 +554,7 @@ namespace Annotation_finish
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    transformCoord(_savedDrawing);
+                    transformCoordSave(_savedDrawing);
 
                     _savedDrawing.Save(sfd.FileName);
                 }
