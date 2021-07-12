@@ -139,6 +139,8 @@ namespace Annotation_finish
 
                 }
 
+                ///Merge funktion
+                
                 foreach (Curve curve in _savedDrawing.Curves)
                 {
                     if (!pathList.Contains(curve.ImagePath))
