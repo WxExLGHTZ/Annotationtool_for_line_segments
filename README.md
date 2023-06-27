@@ -14,13 +14,6 @@ Ein einfaches Tool zum zeichnen von Liniensegmente auf Bildern, wo zum Beispiel 
 ## Installationshinweise
 
 **Clone the repo:**
-_git clone_ https://gitlab.rz.htw-berlin.de/programmierprojekt/sose2021/grp08.git
-
-**Open folder:**
-grp08
-
-**Open folder:**
-Version finished
 
 **Open folder:**
 Annotation_finish
@@ -39,9 +32,3 @@ Es ist möglich die letzte oder alle Kurven zu löschen.
 Es können Datein mit den Dateinamenserweiterungen: ".drw ; .bmp ; .jpg ; .png" geladen werden.
 
 Es können Datein mit der Dateinamenserweiterung .drw gespeichert werden.
-
-## Links, Hinweise etc.
-
-1. Markdown Syntax: https://docs.gitlab.com/ee/user/markdown.html
-2. Git fuer Windows: https://git-scm.com/download/win
-3. Nutzen Sie zur Organisation von Teamaufgaben das Kanban-Board unter Issues/Boards im gitlab!
